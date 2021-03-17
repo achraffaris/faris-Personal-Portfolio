@@ -1,0 +1,132 @@
+{% load widget_tweaks %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>{% block title %}{% endblock title %}</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="{% block meta_description %}{% endblock meta_description %}">
+	<meta name="keywords" content="{% block meta_keywords %}{% endblock meta_keywords %}">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+
+    <link rel="stylesheet" href="{% static 'css/open-iconic-bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/animate.css' %}">
+    
+    <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/owl.theme.default.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/magnific-popup.css' %}">
+
+    <link rel="stylesheet" href="{% static 'css/aos.css' %}">
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="{% static 'css/ionicons.min.css' %}">
+    <link rel="icon" type="image/png" href="{% static 'images/favicon.ico' %}">
+    <link rel="stylesheet" href="{% static 'css/flaticon.css' %}">
+    <link rel="stylesheet" href="{% static 'css/icomoon.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <script data-ad-client="ca-pub-1480231167524718" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  </head>
+  <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
+	  <div id="fb-root"></div>
+<div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v10.0&appId=441244180428939" nonce="peT1r95E"></script>       
+	  
+    <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar ftco-navbar-light site-navbar-target" id="ftco-navbar">
+	    <div class="container">
+	      <a class="navbar-brand" href="/"><span>F</span>aris</a>
+	      <button class="navbar-toggler js-fh5co-nav-toggle fh5co-nav-toggle" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+	        <span class="oi oi-menu"></span> Menu
+	      </button>
+
+	      <div class="collapse navbar-collapse" id="ftco-nav">
+	        <ul class="navbar-nav nav ml-auto">
+	          <li class="nav-item"><a href="{% url 'home' %}" class="nav-link"><span>Home</span></a></li>
+	          <li class="nav-item"><a href="{% url 'home' %}#about-section" class="nav-link"><span>About</span></a></li>
+	          <li class="nav-item"><a href="{% url 'home' %}#resume-section" class="nav-link"><span>Resume</span></a></li>
+	          <li class="nav-item"><a href="{% url 'projects' %}" class="nav-link"><span>Projects</span></a></li>
+	          <li class="nav-item"><a href="{% url 'blogs' %}" class="nav-link"><span>My Blog</span></a></li>
+	          <li class="nav-item"><a href="{% url 'home' %}#contact-section" class="nav-link"><span>Contact</span></a></li>
+	        </ul>
+	      </div>
+	    </div>
+	  </nav>
+
+
+
+
+      {% block content %}
+      
+      
+      
+      
+      {% endblock content %}
+ <footer class="ftco-footer ftco-section">
+      <div class="container">
+        <div class="row mb-5">
+          <div class="col-md">
+            <div class="ftco-footer-widget mb-4">
+              <h2 class="ftco-heading-2">About</h2>
+              <p>I am Achraf Faris, a Backend Developer, able to code web services and APIs used by front-end developers. I'm responsible for server-side web application logic as well as the integration of the front-end part. Besides,
+I can manage digital content to establish a company's' presence online. </p>
+              <ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-5">
+                <li class="ftco-animate"><a href="https://github.com/ashraffaris42" target="_blank"><span class="icon-github"></span></a></li>
+                <li class="ftco-animate"><a href="https://www.linkedin.com/in/ashraffaris42" target="_blank"><span class="icon-linkedin"></span></a></li>
+                <li class="ftco-animate"><a href="https://twitter.com/_ashraffaris/" target="_blank"><span class="icon-twitter"></span></a></li>
+				<li class="ftco-animate"><a href="https://www.instagram.com/_ashraffaris/" target="_blank"><span class="icon-instagram"></span></a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md">
+            <div class="ftco-footer-widget mb-4 ml-md-4">
+              <h2 class="ftco-heading-2">Links</h2>
+              <ul class="list-unstyled">
+                <li><a href="{% url 'home' %}"><span class="icon-long-arrow-right mr-2"></span>Home</a></li>
+                <li><a href="{% url 'blogs' %}"><span class="icon-long-arrow-right mr-2"></span>Blog</a></li>
+                <li><a href="{% url 'privacypolicy' %}"><span class="icon-long-arrow-right mr-2"></span>Privacy Policy</a></li>
+                <li><a href="{% url 'termofservices' %}"><span class="icon-long-arrow-right mr-2"></span>Terms of Service</a></li>
+                <li><a href="{% url 'home' %}#contact-section" ><span class="icon-long-arrow-right mr-2"></span>Contact</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md">
+            <div class="ftco-footer-widget mb-4">
+            	<h2 class="ftco-heading-2">Have a Questions?</h2>
+            	<div class="block-23 mb-3">
+	              <ul>
+	                <li><span class="icon icon-map-marker"></span><span class="text">Casablanca 20000, Morocco</span></li>
+	                <li><a href="#"><span class="icon icon-phone"></span><span class="text">+212 672 7937 18</span></a></li>
+	                <li><a href="#"><span class="icon icon-envelope"></span><span class="text">contact@achraffaris.net</span></a></li>
+	              </ul>
+	            </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12 text-center">
+
+            <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved  |  Back end made by <a href="https://achraffaris.net" target="_blank">Achraf Faris</a> | This template is made with <i class="icon-heart color-danger" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+  <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+
+        <script src="{% static 'js/jquery.min.js' %}"></script>
+  <script src="{% static 'js/jquery-migrate-3.0.1.min.js' %}"></script>
+  <script src="{% static 'js/popper.min.js' %}"></script>
+  <script src="{% static 'js/bootstrap.min.js' %}"></script>
+  <script src="{% static 'js/jquery.easing.1.3.js' %}"></script>
+  <script src="{% static 'js/jquery.waypoints.min.js' %}"></script>
+  <script src="{% static 'js/jquery.stellar.min.js' %}"></script>
+  <script src="{% static 'js/owl.carousel.min.js' %}"></script>
+  <script src="{% static 'js/jquery.magnific-popup.min.js' %}"></script>
+  <script src="{% static 'js/aos.js' %}"></script>
+  <script src="{% static 'js/jquery.animateNumber.min.js' %}"></script>
+  <script src="{% static 'js/scrollax.min.js' %}"></script>
+  
+  <script src="{% static 'js/main.js' %}"></script>
+    
+  </body>
+</html>

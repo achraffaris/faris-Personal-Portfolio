@@ -1,0 +1,41 @@
+{% extends 'layout.html' %}
+
+{% block title %}Achraf Faris - Latest Posts{% endblock title %}
+{% block meta_description %}Achraf Faris - Latest Posts{% endblock meta_description %}
+{% block meta_keywords %}{% endblock meta_keywords %}
+
+
+{% block content %}
+
+<section class="ftco-section" id="blog-section">
+      <div class="container">
+        <div class="row justify-content-center mb-5 pb-5">
+          <div class="col-md-7 heading-section text-center ftco-animate">
+            <h1 class="big big-2">Latest Posts</h1>
+            <h2 class="mb-4">Latest Posts</h2>
+          </div>
+        </div>
+        <div class="row d-flex">
+		{% for blog in Blogs|slice:":12" %}
+          <div class="col-md-4 d-flex ftco-animate">
+          	<div class="blog-entry justify-content-end">
+              <a href="{% url 'blog' blog.id %}" class="block-20" style="background-image: url('{{blog.image.url}}');">
+              </a>
+              <div class="text mt-3 float-right d-block">
+                <h3 class="heading"><a href="{% url 'blog' blog.id %}" target="_blank">{{blog.title}}</a></h3>
+                <div class="d-flex align-items-center mb-3 meta">
+	                <p class="mb-0">
+	                	<span class="mr-2">{{blog.date}}</span>
+	                	<a href="#" class="mr-2">Admin</a>
+	                	<a href="#" class="meta-chat"><span class="icon-chat"></span> 0</a>
+	                </p>
+                </div>
+              </div>
+            </div>
+          </div>
+		  {% endfor %}
+        </div>
+      </div>
+    </section>
+
+{% endblock content %}

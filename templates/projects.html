@@ -1,0 +1,37 @@
+{% extends './layout.html' %}
+
+{% block title %}Achraf Faris - Projects{% endblock title %}
+{% block meta_description %}{% endblock meta_description %}
+{% block meta_keywords %}achraf faris projects{% endblock meta_keywords %}
+
+
+{% block content %}
+
+    <section class="ftco-section" id="projects-section">
+      <div class="container">
+        <div class="row justify-content-center mb-3 pb-3">
+          <div class="col-md-7 heading-section text-center ftco-animate">
+            <h1 class="big big-2">My Projects</h1>
+            <h2 class="mb-4">My Projects</h2>
+			
+          </div>
+        </div>
+        <div class="row d-flex">
+		{% for pr in Projects %}
+          <div class="col-md-4 d-flex ftco-animate">
+          	<div class="blog-entry justify-content-end">
+              <a href="{% url 'project' pr.id %}" class="block-20" style="background-image: url('{{pr.image.url}}');">
+              </a>
+              <div class="text mt-3 float-right d-block">
+                <h3 class="heading"><a href="{% url 'project' pr.id %}">{{pr.title}}</a></h3>
+				<p>{{pr.subtitle}}</p>
+              </div>
+            </div>
+          </div>
+		{% endfor %}
+        </div>
+
+      </div>		
+    </section>
+
+{% endblock content %}

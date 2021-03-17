@@ -1,0 +1,54 @@
+{% extends 'layout.html' %}
+
+{% block title %}Achraf Faris - {{project.title}}{% endblock title %}
+{% block meta_description %}{{project.subtitle}}{% endblock meta_description %}
+{% block meta_keywords %}{% endblock meta_keywords %}
+
+
+{% block content %}
+
+<section class="ftco-section">
+      <div class="container">
+<div class="row">
+						<div class="col-md-6">
+							<div class="left_img">
+								<img class="img-fluid" src="{{project.image.url}}" alt="">
+							</div>
+						</div>
+						<div class="col-md-6">
+							<div class="portfolio_right_text">
+								<h3>{{project.title}}</h3>
+								<p>{{project.subtitle}}</p>
+								<ul class="list">
+									<li><strong class="icon-eye mr-2"></strong> {{project.views}} Views</li>
+									<li><strong>Frontend:</strong>  {{project.frontend}}</li>
+									<li><strong>Backend:</strong> {{project.backend}}</li>
+									<li><strong>Completed:</strong>  {{project.date}}</li>
+								</ul>
+                                    <div class="row">
+                                        <div class="col">
+                                                                                    <a href="{{project.live_demo}}" target="_blank" type="button" class="btn btn-warning ftco-animate"><span class="icon-code mr-2"></span>Source Code</a>
+
+                                        </div>
+                                        <div class="col">
+                                                                                        <a href="{{project.source_code}}" target="_blank" type="button" class="btn btn-success ftco-animate"><span class="icon-eye mr-2"></span>Live Demo</a>
+
+                                        </div>
+                                            <div class="col">
+                                        
+                                                
+                                    </div>
+                                    </div>
+							</div>
+
+                        
+					</div>
+        </div>
+                            <hr>
+                            {{project.description | safe}}
+<div class="fb-comments" data-href="{{request.build_absolute_uri}}" data-width="" data-numposts="5"></div>
+
+</section>
+
+
+{% endblock content %}

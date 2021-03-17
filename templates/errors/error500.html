@@ -1,0 +1,29 @@
+{% extends '../layout.html' %}
+
+{% block title %}500 - Internal server error{% endblock title %}
+
+
+
+{% block content %}
+
+
+<section class="ftco-section">
+      <div class="container">
+          
+        <div class="page-wrap d-flex flex-row align-items-center">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-12 text-center">
+                <span class="display-1 d-block">500</span>
+                <div class="mb-4 lead">Internal server error</div>
+                <a href="{% url 'home' %}" class="btn btn-link">Back to Home</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+      </div>
+    </section>
+
+
+{% endblock content %}

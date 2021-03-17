@@ -1,0 +1,63 @@
+{% extends 'layout.html' %}
+{% load static %}
+{% block title %}{{blog.title}}{% endblock title %}
+{% block meta_description %}{% endblock meta_description %}
+{% block meta_keywords %}{% endblock meta_keywords %}
+
+
+{% block content %}
+
+<section class="ftco-section">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 ftco-animate fadeInUp ftco-animated">
+          <img src="{{blog.image.url}}" alt="" class="img-fluid">
+                    <br/><br/>
+
+          <div class="row">
+  <div class="col"><strong class="icon-eye mr-2"></strong> {{blog.views}} Views</div>
+ <div class="col"><strong class="icon-calendar mr-2"></strong> {{blog.date}}</div>
+</div>
+          <hr>
+            {{blog.description | safe }}
+<div class="fb-comments" data-href="{{request.build_absolute_uri}}" data-width="" data-numposts="5"></div>
+
+          </div> <!-- .col-md-8 -->
+          <div class="col-lg-4 sidebar ftco-animate fadeInUp ftco-animated">
+            <div class="sidebar-box ftco-animate fadeInUp ftco-animated">
+            	<h3 class="heading-sidebar">Categories</h3>
+              <ul class="categories">
+                {% for Cat in Categories|slice:":7" %}
+                <li><a href="#">{{Cat.name}} <span>(0)</span></a></li>
+                {% endfor %}
+              </ul>
+            </div>
+
+            <div class="sidebar-box ftco-animate fadeInUp ftco-animated">
+              <h3 class="heading-sidebar">Recent Blog</h3>
+              {% for Blog in Blogs|slice:":5"  %}
+              <div class="block-21 mb-4 d-flex">
+                <a class="blog-img mr-4" style="background-image: url('{{Blog.image.url}}');"></a>
+                <div class="text">
+                  <h3 class="heading"><a href="{% url 'blog' Blog.id %}">{{Blog.title}}</a></h3>
+                  <div class="meta">
+                    <div><a href="#"><span class="icon-calendar"></span> {{Blog.date}}</a></div>
+                    <div><a href="#"><span class="icon-person"></span> Admin</a></div>
+                  </div>
+                </div>
+              </div>
+              {% endfor %}
+            </div>
+
+            
+
+            
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+
+{% endblock content %}

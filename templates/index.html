@@ -1,0 +1,447 @@
+{% extends 'layout.html' %}
+{% load static %}
+
+{% load widget_tweaks %}
+
+{% block title %}
+Achraf Faris - Back-end Developer Portfolio
+{% endblock title %}
+
+{% block meta_description %}
+I am Achraf Faris, a Back-end Developer, able to develop web services and APIs used by front-end developers. using latest web frameworks. Check my portfolio for more
+{% endblock meta_description %}
+
+{% block meta_keywords %}
+achraf faris,ashraffaris,achraffaris,ashraffaris42,achraf faris linkedin,achraf faris portfolio,web developer,Backend developer,Django,react js,django developer,expert in django,ashrafyno,_ashraffaris,moroccan web developer,developpement,backend developer,php developer,data analyst developer
+{% endblock meta_keywords %}
+
+
+{% block content %}
+
+	  <section class="hero-wrap js-fullheight">
+      <div class="overlay"></div>
+      <div class="container">
+        <div class="row no-gutters slider-text js-fullheight justify-content-center align-items-center">
+          <div class="col-lg-8 col-md-6 ftco-animate d-flex align-items-center">
+          	<div class="text text-center">
+          		<span class="subheading">Hey! I am</span>
+		  				<h1>Achraf Faris</h1>
+			  				<h2>I'm a 
+								  <span
+								     class="txt-rotate"
+								     data-period="1000"
+								     data-rotate='[ "Junior Django Developer.","Full Stack Developer." ]'></span>
+								</h2>
+							</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="mouse">
+				<a href="#" class="mouse-icon">
+					<div class="mouse-wheel"><span class="ion-ios-arrow-round-down"></span></div>
+				</a>
+			</div>
+    </section>
+
+    <section class="ftco-about img ftco-section ftco-no-pt ftco-no-pb" id="about-section">
+    	<div class="container">
+    		<div class="row d-flex no-gutters">
+    			<div class="col-md-6 col-lg-6 d-flex">
+    				<div class="img-about img d-flex align-items-stretch">
+    					<div class="overlay"></div>
+	    				<div class="img d-flex align-self-stretch align-items-center" style="background-image:url('{% static 'images/me.png' %}');">
+	    				</div>
+    				</div>
+    			</div>
+    			<div class="col-md-6 col-lg-6 pl-md-5 py-5">
+    				<div class="row justify-content-start pb-3">
+		          <div class="col-md-12 heading-section ftco-animate">
+		          	<h1 class="big">About</h1>
+		            <h2 class="mb-4">About Me</h2>
+		            <p>I am a Backend Developer, able to code web services and APIs used by front-end developers. I'm responsible for server-side web application logic as well as the integration of the front-end part. </p>
+		            <ul class="about-info mt-4 px-md-0 px-2">
+		            	<li class="d-flex"><span>Name:</span> <span>Achraf Faris</span></li>
+		            	<li class="d-flex"><span>Date of birth:</span> <span>November 15, 2000</span></li>
+		            	<li class="d-flex"><span>Address:</span> <span>Casablanca 20000, Morocco</span></li>
+		            	<li class="d-flex"><span>Email:</span> <span>Contact@achraffaris.net</span></li>
+		            	<li class="d-flex"><span>Phone: </span> <span>+212-672793718</span></li>
+		            </ul>
+		          </div>
+		        </div>
+	          <div class="counter-wrap ftco-animate d-flex mt-md-3">
+              <div class="text">
+              	<p class="mb-4">
+	                <span class="number" data-number="4">0</span>
+	                <span>Project completed</span>
+                </p>
+                <div class="container">
+                <div class="col">
+                    <div class="row">
+                        <p><a href="#" class="btn btn-primary py-3 px-3">Download CV</a></p>
+                        <p><a href="/#contact-section" class="btn btn-success py-3 px-3 ml-5">Hire me</a></p>
+                        
+                            
+                    </div>
+                    <div class="row">
+                        
+                    </div>
+                </div>
+                </div>
+              </div>
+	          </div>
+	        </div>
+        </div>
+    	</div>
+    </section>
+
+
+    <section class="ftco-section ftco-no-pb goto-here" id="resume-section">
+    	<div class="container">
+    		<div class="row">
+    			<div class="col-md-3">
+				    <nav id="navi">
+					    <ul>
+					      <li><a href="#page-1">Education</a></li>
+					      <li><a href="#page-2">Experience</a></li>
+					      <li><a href="#page-3">Skills</a></li>
+					      <li><a href="#page-4">Certificates</a></li>
+					    </ul>
+					  </nav>
+					</div>
+					<div class="col-md-9">
+					  <div id="page-1" class= "page one">
+					  	<h2 class="heading">Education</h2>
+						{% for ed in Educations %}
+					    <div class="resume-wrap d-flex ftco-animate">
+					    	<div class="icon d-flex align-items-center justify-content-center">
+					    		<span class="flaticon-ideas"></span>
+					    	</div>
+					    	<div class="text pl-3">
+		    					<span class="date">{{ed.date}}</span>
+		    					<h2>{{ed.title}}</h2>
+		    					<span class="position">{{ed.school}}</span>
+		    					<p>{{ed.description}}</p>
+	    					</div>
+	    				</div>
+						{% endfor %}
+	    				
+	    				
+					  </div>
+
+					  <div id="page-2" class= "page two">
+					  	<h2 class="heading">Experience</h2>
+						{% for exp in Experiences %}
+					    <div class="resume-wrap d-flex ftco-animate">
+					    	<div class="icon d-flex align-items-center justify-content-center">
+					    		<span class="flaticon-ideas"></span>
+					    	</div>
+					    	<div class="text pl-3">
+		    					<span class="date">{{exp.start}}-{{exp.end}}</span>
+		    					<h2>{{exp.title}}</h2>
+		    					<span class="position">{{exp.campany}}</span>
+		    					<p>{{exp.description}}.</p>
+		    				</div>
+	    				</div>
+						{% endfor %}
+
+					  <div id="page-3" class= "page three">
+					  	<h2 class="heading">Skills</h2>
+					  	<div class="row">
+					  		<div class="col-md-6 animate-box">
+									<div class="progress-wrap ftco-animate">
+										<h3>ASP.net</h3>
+										<div class="progress">
+										 	<div class="progress-bar color-1" role="progressbar" aria-valuenow="90"
+										  	aria-valuemin="0" aria-valuemax="100" style="width:65%">
+										    <span>65%</span>
+										  	</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-md-6 animate-box">
+									<div class="progress-wrap ftco-animate">
+										<h3>Django</h3>
+										<div class="progress">
+										 	<div class="progress-bar color-2" role="progressbar" aria-valuenow="85"
+										  	aria-valuemin="0" aria-valuemax="100" style="width:75%">
+										    <span>75%</span>
+										  	</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-md-6 animate-box">
+									<div class="progress-wrap ftco-animate">
+										<h3>HTML5 - CSS3</h3>
+										<div class="progress">
+										 	<div class="progress-bar color-3" role="progressbar" aria-valuenow="95"
+										  	aria-valuemin="0" aria-valuemax="100" style="width:75%">
+										    <span>75%</span>
+										  	</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-md-6 animate-box">
+									<div class="progress-wrap ftco-animate">
+										<h3> JS - jQuery - Ajax </h3>
+										<div class="progress">
+										 	<div class="progress-bar color-4" role="progressbar" aria-valuenow="90"
+										  	aria-valuemin="0" aria-valuemax="100" style="width:60%">
+										    <span>60%</span>
+										  	</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-md-6 animate-box">
+									<div class="progress-wrap ftco-animate">
+										<h3>Testing & Deployment.</h3>
+										<div class="progress">
+										 	<div class="progress-bar color-5" role="progressbar" aria-valuenow="70"
+										  	aria-valuemin="0" aria-valuemax="100" style="width:70%">
+										    <span>70%</span>
+										  	</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-md-6 animate-box">
+									<div class="progress-wrap ftco-animate">
+										<h3>MySQL</h3>
+										<div class="progress">
+										 	<div class="progress-bar color-6" role="progressbar" aria-valuenow="65"
+										  	aria-valuemin="0" aria-valuemax="100" style="width:65%">
+										    <span>65%</span>
+										  	</div>
+										</div>
+									</div>
+								</div>
+					  	</div>
+					  </div>
+					  <div id="page-4" class= "page four">
+					    <h2 class="heading">Certification</h2>
+						{% for cer in Certificates %}
+					    <div class="resume-wrap d-flex ftco-animate">
+					    	<div class="icon d-flex align-items-center justify-content-center">
+					    		<span class="flaticon-ideas"></span>
+					    	</div>
+					    	<div class="text pl-3">
+		    					<span class="date">{{cer.date}}</span>
+		    					<h2>{{cer.title}}</h2>
+		    					<span class="position">{{cer.organization}}</span>
+		    					<p>{{cer.description}}.</p>
+	    					</div>
+	    				</div>
+						{% endfor %}
+	    				
+					  </div>
+					</div>
+			  </div>
+    	</div>
+    </section>
+
+
+    <section class="ftco-section" id="projects-section">
+      <div class="container">
+        <div class="row justify-content-center mb-3 pb-3">
+          <div class="col-md-7 heading-section text-center ftco-animate">
+            <h1 class="big big-2">Latest Projects</h1>
+            <h2 class="mb-4">Latest Projects</h2>
+			
+          </div>
+        </div>
+        <div class="row d-flex">
+		{% for pr in Projects %}
+          <div class="col-md-4 d-flex ftco-animate">
+          	<div class="blog-entry justify-content-end">
+              <a href="{% url 'project' pr.id %}" class="block-20" style="background-image: url('{{pr.image.url}}');">
+              </a>
+              <div class="text mt-3 float-right d-block">
+                <h3 class="heading"><a href="{% url 'project' pr.id %}">{{pr.title}}</a></h3>
+				<p>{{pr.subtitle}}</p>
+              </div>
+            </div>
+          </div>
+		  
+		{% endfor %}
+        </div>
+
+      </div>		
+	  <div class="text-center">
+            <a href="{% url 'projects' %}" type="button" class="btn btn-info "><span class="icon-long-arrow-right mr-2"></span>All Projects</a>
+        </div>
+
+    </section>
+
+    <section class="ftco-section" id="blog-section">
+      <div class="container">
+        <div class="row justify-content-center mb-5 pb-5">
+          <div class="col-md-7 heading-section text-center ftco-animate">
+            <h1 class="big big-2">Latest Posts</h1>
+            <h2 class="mb-4">Latest Posts</h2>
+          </div>
+        </div>
+        <div class="row d-flex">
+		{% for blog in Blogs %}
+          <div class="col-md-4 d-flex ftco-animate">
+          	<div class="blog-entry justify-content-end">
+              <a href="{% url 'blog' blog.id %}" class="block-20" style="background-image: url('{{blog.image.url}}');">
+              </a>
+              <div class="text mt-3 float-right d-block">
+                <h3 class="heading"><a href="{% url 'blog' blog.id %}">{{blog.title}}</a></h3>
+                <div class="d-flex align-items-center mb-3 meta">
+	                <p class="mb-0">
+	                	<span class="mr-2">{{blog.date}}</span>
+	                	<a href="#" class="mr-2">Admin</a>
+	                	<a href="#" class="meta-chat"><span class="icon-chat"></span> 0</a>
+	                </p>
+                </div>
+              </div>
+            </div>
+          </div>
+		  {% endfor %}
+        </div>
+		<div class="text-center">
+            <a href="{% url 'blogs' %}" type="button" class="btn btn-info ftco-animate"><span class="icon-long-arrow-right mr-2"></span>All Posts</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="ftco-section ftco-hireme img" style="background-image: url({% static 'images/image_1.jpg' %})">
+    	<div class="overlay"></div>
+			<div class="container">
+				<div class="row justify-content-center">
+					<div class="col-md-7 ftco-animate text-center">
+						<h2>I'm <span>Available</span> for freelancing</h2>
+						<p class="mb-0"><a href="/#contact-section" class="btn btn-primary py-3 px-5">Hire me</a></p>
+					</div>
+				</div>
+			</div>
+		</section>
+
+    <section class="ftco-section contact-section ftco-no-pb" id="contact-section">
+      <div class="container">
+      	<div class="row justify-content-center mb-5 pb-3">
+          <div class="col-md-7 heading-section text-center ftco-animate">
+            <h1 class="big big-2">Contact</h1>
+            <h2 class="mb-4">Contact Me</h2>
+          </div>
+        </div>
+
+        <div class="row d-flex contact-info mb-5">
+          <div class="col-md-6 col-lg-3 d-flex ftco-animate">
+          	<div class="align-self-stretch box text-center p-4 shadow">
+          		<div class="icon d-flex align-items-center justify-content-center">
+          			<span class="icon-map-signs"></span>
+          		</div>
+          		<div>
+	          		<h3 class="mb-4">Address</h3>
+		            <p>Casablanca 20000, Morocco</p>
+		          </div>
+	          </div>
+          </div>
+          <div class="col-md-6 col-lg-3 d-flex ftco-animate">
+          	<div class="align-self-stretch box text-center p-4 shadow">
+          		<div class="icon d-flex align-items-center justify-content-center">
+          			<span class="icon-phone2"></span>
+          		</div>
+          		<div>
+	          		<h3 class="mb-4">Contact Number</h3>
+		            <p><a href="tel://212672793718">+ 212 672793718</a></p>
+	            </div>
+	          </div>
+          </div>
+          <div class="col-md-6 col-lg-3 d-flex ftco-animate">
+          	<div class="align-self-stretch box text-center p-4 shadow">
+          		<div class="icon d-flex align-items-center justify-content-center">
+          			<span class="icon-paper-plane"></span>
+          		</div>
+          		<div>
+	          		<h3 class="mb-4">Email Address</h3>
+		            <p><a href="mailto:contact@achraffaris.net">Contact@achraffaris.net</a></p>
+		          </div>
+	          </div>
+          </div>
+          <div class="col-md-6 col-lg-3 d-flex ftco-animate">
+          	<div class="align-self-stretch box text-center p-4 shadow">
+          		<div class="icon d-flex align-items-center justify-content-center">
+          			<span class="icon-globe"></span>
+          		</div>
+          		<div>
+	          		<h3 class="mb-4">Website</h3>
+		            <p><a href="#">achraffaris.net</a></p>
+	            </div>
+	          </div>
+          </div>
+        </div>
+
+        <div class="row no-gutters block-9">
+          <div class="col-md-6 order-md-last d-flex">
+            <form method="POST" class="bg-light p-4 p-md-5 contact-form" id="contactform">
+			{% csrf_token %}
+              <div class="form-group">
+			  {% render_field form.name class="form-control" placeholder="Your Name" id="name" %}
+              </div>
+              <div class="form-group">
+			  			  {% render_field form.email class="form-control" placeholder="Your Email" id="email" %}
+              </div>
+              <div class="form-group">
+			  			  {% render_field form.subject class="form-control" placeholder="Subject" id="subject" %}
+              </div>
+              <div class="form-group">
+			  			  {% render_field form.message cols="30" rows="7" class="form-control" placeholder="Message" id="message" %}
+              </div>
+              <div class="form-group">
+			  <div class="d-flex align-items-center">
+                <input type="submit" value="Send Message" class="btn btn-primary py-3 px-5">
+  <div class="spinner-border text-success ml-auto" role="status" id="spinner" aria-hidden="true"></div>
+</div>
+              </div>
+
+			  <div class="alert alert-success" style="display:none" id="sucess" role="alert">
+			</div>
+            </form>
+          
+          </div>
+
+          <div class="col-md-6 d-flex">
+          	<div class="img" style="background-image: url({% static 'images/me.png' %});"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+		
+
+   
+    
+  
+
+  <!-- loader -->
+  <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
+
+      <script>
+	  			$('#spinner').hide();
+              $('#contactform').on('submit', function(event){
+              event.preventDefault();
+			  $('#spinner').show();
+              $.ajax({
+                url: "{% url 'sendmail' %}",
+                type:'POST',
+                dataType: 'json',
+                data: {
+                  name: $("#name").val(),
+				  email: $("#email").val(),
+				  subject: $("#subject").val(),
+				  message: $("#message").val(),
+                  csrfmiddlewaretoken: '{{ csrf_token }}',
+          
+                },
+                success: function(json){
+					$('#spinner').hide();
+					$("#sucess").html("Congratulations "+json.name+", Your email was successfully sent!");
+                  	$("#sucess").css("display", "block");
+                }
+              })
+          });
+          
+              
+      </script>
+{% endblock content %}
